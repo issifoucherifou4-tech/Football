@@ -1,0 +1,6 @@
+{
+  "name": "Embampé - Vidéo & Publicité Pinterest",
+  "description": "Lecteur vidéo haute définition Embampé en première position, enregistrement de la vidéo et intégration publicitaire responsive pour ordinateur et mobile.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
