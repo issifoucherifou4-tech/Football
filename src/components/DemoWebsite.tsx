@@ -4,6 +4,7 @@ import { ResponsiveAdCard } from './ResponsiveAdCard';
 import { FloatingMobileAd } from './FloatingMobileAd';
 import { PinterestOfficialEmbed } from './PinterestOfficialEmbed';
 import { EmbappeHeroVideo } from './EmbappeHeroVideo';
+import { BiceaLeaderboardAd } from './BiceaLeaderboardAd';
 import { 
   Trophy, 
   Share2, 
@@ -147,6 +148,11 @@ export const DemoWebsite: React.FC<DemoWebsiteProps> = ({
           onAdClick={onAdClick}
           defaultTheaterMode={true}
         />
+
+        {/* ESPACE PUBLICITAIRE LEADERBOARD (728x90 bicea.org) */}
+        <div className="my-6">
+          <BiceaLeaderboardAd />
+        </div>
 
         {/* 2-Column Grid: Main Editorial Article & Responsive Sidebar */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

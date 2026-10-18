@@ -343,45 +343,19 @@ export const EmbappeHeroVideo: React.FC<EmbappeHeroVideoProps> = ({
           preload="metadata"
         />
 
-        {/* Big Center Play Overlay (when paused) */}
+        {/* Center Play Overlay (when paused) - Sans écriture devant la vidéo */}
         {!isPlaying && (
           <div
             onClick={togglePlay}
-            className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex flex-col items-center justify-center cursor-pointer transition-opacity z-20"
+            className="absolute inset-0 bg-black/30 hover:bg-black/20 flex items-center justify-center cursor-pointer transition-colors z-20"
           >
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-rose-600 via-rose-500 to-blue-600 p-1 shadow-2xl shadow-rose-950/80 hover:scale-110 active:scale-95 transition-transform flex items-center justify-center group-hover:ring-4 ring-rose-500/30">
-              <div className="w-full h-full rounded-full bg-slate-950/80 backdrop-blur-md flex items-center justify-center pl-1.5">
-                <Play className="w-9 h-9 sm:w-11 sm:h-11 text-white fill-white" />
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-rose-600 via-rose-500 to-blue-600 p-0.5 shadow-2xl shadow-rose-950/80 hover:scale-110 active:scale-95 transition-transform flex items-center justify-center ring-2 ring-white/30">
+              <div className="w-full h-full rounded-full bg-slate-950/80 backdrop-blur-md flex items-center justify-center pl-1">
+                <Play className="w-8 h-8 sm:w-10 sm:h-10 text-white fill-white" />
               </div>
-            </div>
-
-            <div className="mt-4 text-center">
-              <span className="text-white font-black text-sm sm:text-base tracking-wide uppercase px-4 py-1.5 rounded-full bg-black/60 border border-white/10 backdrop-blur-md">
-                Lancer la vidéo : Kylian Mbappé (Le Meilleur Joueur)
-              </span>
-              <p className="text-[11px] text-slate-300 mt-1">
-                Appuyez sur <kbd className="px-1.5 py-0.5 bg-slate-800 rounded text-slate-200">Espace</kbd> ou cliquez pour lire
-              </p>
             </div>
           </div>
         )}
-
-        {/* Top Watermark & Info Overlay inside Video */}
-        <div className={`absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none transition-opacity duration-300 z-20 ${showControls || !isPlaying ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-            <span className="text-xs font-black text-white">Kylian Mbappé • Le Meilleur Joueur du Monde</span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="text-[10px] bg-blue-600/80 text-white font-bold px-2 py-0.5 rounded backdrop-blur-md">
-              1080p 60FPS
-            </span>
-            <span className="text-[10px] bg-rose-600/80 text-white font-bold px-2 py-0.5 rounded backdrop-blur-md">
-              Pinterest Link
-            </span>
-          </div>
-        </div>
 
         {/* BOTTOM VIDEO CONTROLS BAR (Computer Desktop & Mobile Responsive) */}
         <div

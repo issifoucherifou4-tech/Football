@@ -8,8 +8,28 @@ interface CodeSnippetExporterProps {
 }
 
 export const CodeSnippetExporter: React.FC<CodeSnippetExporterProps> = ({ config }) => {
-  const [activeTab, setActiveTab] = useState<'video' | 'html' | 'react' | 'floating' | 'pinterest-sdk'>('video');
+  const [activeTab, setActiveTab] = useState<'video' | 'bicea' | 'html' | 'react' | 'floating' | 'pinterest-sdk'>('video');
   const [copied, setCopied] = useState(false);
+
+  // Generate Leaderboard 728x90 Bicea Code
+  const getBiceaCode = () => {
+    return `<!-- =================================================================== -->
+<!-- BANNIÈRE LEADERBOARD 728x90 (BICEA.ORG)                              -->
+<!-- Code publicitaire avec format iframe responsive                      -->
+<!-- =================================================================== -->
+<div style="width:100%;max-width:728px;margin:20px auto;display:flex;justify-content:center;overflow:hidden;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '3f56ce0bf7cc0dabaab62f805af659a1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bicea.org/22/3f56ce0bf7cc0dabaab62f805af659a1"></script>
+</div>`;
+  };
 
   // Generate responsive Embampé Video Player with download option
   const getVideoCode = () => {
@@ -359,6 +379,8 @@ export const PinterestResponsiveAd = () => {
     switch (activeTab) {
       case 'video':
         return getVideoCode();
+      case 'bicea':
+        return getBiceaCode();
       case 'html':
         return getHtmlCode();
       case 'react':
@@ -395,7 +417,7 @@ export const PinterestResponsiveAd = () => {
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-400">
-            Copiez ce code pour intégrer la vidéo Embampé et la bannière Pinterest sur votre site web.
+            Copiez ce code pour intégrer la vidéo Mbappé, la bannière 728x90 (bicea.org) et le pin Pinterest sur votre site web.
           </p>
         </div>
 
@@ -423,7 +445,19 @@ export const PinterestResponsiveAd = () => {
           }`}
         >
           <Laptop className="w-3.5 h-3.5" />
-          <span>Vidéo Embampé (1ère Position + Téléchargement)</span>
+          <span>Vidéo Mbappé (1ère Position + Téléchargement)</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('bicea')}
+          className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+            activeTab === 'bicea'
+              ? 'bg-emerald-600 text-white shadow-md'
+              : 'text-slate-400 hover:text-white hover:bg-slate-800'
+          }`}
+        >
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>Leaderboard 728x90 (bicea.org)</span>
         </button>
 
         <button

@@ -27,6 +27,7 @@ import { DeviceSimulator } from './components/DeviceSimulator';
 import { CodeSnippetExporter } from './components/CodeSnippetExporter';
 import { AdStudioCustomizer } from './components/AdStudioCustomizer';
 import { UserAccountAdManager } from './components/UserAccountAdManager';
+import { BiceaLeaderboardAd } from './components/BiceaLeaderboardAd';
 import { UserCheck } from 'lucide-react';
 
 export default function App() {
@@ -345,6 +346,28 @@ export default function App() {
                     pinUrl={adConfig.pinUrl}
                     pinShortUrl={adConfig.pinShortUrl}
                   />
+                </div>
+              </div>
+
+              {/* Format 5: Bannière Partenaire 728x90 (bicea.org) */}
+              <div className="bg-slate-900/60 rounded-3xl border border-emerald-500/30 p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-emerald-400" />
+                      Format Leaderboard 728x90 (Code Partenaire bicea.org)
+                    </h3>
+                    <p className="text-xs text-slate-400">
+                      Bannière publicitaire iframe responsive avec ajustement automatique sur mobile.
+                    </p>
+                  </div>
+                  <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2 py-1 rounded-full border border-emerald-500/20">
+                    Nouveau Code Actif
+                  </span>
+                </div>
+
+                <div className="bg-slate-950 rounded-2xl border border-slate-800 p-4 flex justify-center">
+                  <BiceaLeaderboardAd showBadge={false} />
                 </div>
               </div>
             </div>
